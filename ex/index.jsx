@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Component from './component';
 
-ReactDOM.render(<h1>Yay, thats react working</h1>, document.getElementById('app'));
+ReactDOM.render(<Component value='Teste props' />, document.getElementById('app'));
