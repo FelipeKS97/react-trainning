@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Primeiro, Segundo } from './component';
+import Family from './family';
+import Member from './member';
 
 ReactDOM.render(
-    <div>
-        <Primeiro value = "primeiro" />
-        <Segundo value = "segundo" />
-    </div>
+    
+        <Family nome="Felipe">
+            <Member numero="1" />
+        </Family>
+   
     , document.getElementById('app'));
