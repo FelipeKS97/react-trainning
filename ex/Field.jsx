@@ -1,24 +1,21 @@
 import React,{Component} from 'react';
-
-export default class Field extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.initialValue
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange(e) {
-        this.setState( {value: e.target.value} );
-    }
+import {connect} from 'react-redux';
+ 
+class Field extends Component {
 
     render() {
         return (
         <div>
-            <h1>{this.state.value}</h1>
-            <input onChange={this.handleChange} />
+            <h1>{this.props.value}</h1>
+            <input onChange={this.handleChange} value={this.props.value} />
         </div>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        value: state.field.value
+    }
+}
+export default connect(mapStateToProps)(Field);
